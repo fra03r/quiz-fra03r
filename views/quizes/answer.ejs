@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8"/>
-    <title>Quiz</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <form>
-      <p><%= respuesta %></p>
-      <a href="/quizes/question"> Inténtelo otra vez<a/>
-    </form>
-  </body>
-</html>
+<p>
+  <%= respuesta %>
+  <a href="/quizes/<%= quiz.id%>"> Volver<a/>
+</p>
