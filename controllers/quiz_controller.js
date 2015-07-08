@@ -23,10 +23,10 @@ exports.index = function(req, res) {
   }
 
   models.Quiz.findAll({
-        where: ["pregunta like ?", search],
+        where: ["upper(pregunta) like ?", search.toUpperCase()],
         order: [["pregunta", "ASC"]]
       }).then(function(quizes) {
-        res.render('quizes/index.ejs', {quizes: quizes});
+        res.render('quizes/index.ejs', {quizes: quizes, errors:[]});
       }
       ).catch(function(error){next(error)});
 };
