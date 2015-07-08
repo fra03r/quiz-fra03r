@@ -16,6 +16,7 @@ exports.load = function(req, res, next, quizId) {
 // GET /quizes
 exports.index = function(req, res) {
 
+//añadido para Ejercicio P2P Obligatorio.Tema 7
   var search = '%';
   if (req.query.search){
     search = '%' + req.query.search.replace(/[ ]+/g,'%') + '%';
