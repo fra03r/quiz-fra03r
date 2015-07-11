@@ -46,6 +46,14 @@ app.use(function(req, res, next) {
   next();
 });
 
+// expirar sesión tras dos minutos inactivos  o 120000 milisegundos
+app.use(function (req, res, next) {
+  var tiempo = 120000;
+  req.session.cookie.expires = new Date(Date.now() + tiempo);
+  //req.session.cookie.maxAge = tiempo;
+  next();
+});
+
 app.use('/', routes);
 //app.use('/users', users);
 
